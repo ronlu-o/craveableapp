@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Craveable Support</title>
+  <meta name="description" content="Support hub for Craveable, the food photography filter app.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --token-ca491423-ed69-4073-9859-26d521a5ce20: #ff6b00; /* accent */
+      --token-f0aa30d0-ed2d-4ee4-8f5a-0a4b541f6ab8: #fafafa; /* surface */
+      --token-3b0f98aa-c16a-4b12-80a4-e1056304b9fa: #000; /* text primary */
+      --token-59e0057d-33bd-4745-b3ad-1acb6546c5ce: #333; /* text secondary */
+      --token-ec5340ae-6550-4602-9d99-b1711e50337e: #ccc; /* divider */
+      --token-490c8163-6119-48f4-a4f6-2848bc2c1f58: #fafafa59; /* blur tint */
+      --token-e102ed96-0129-4d91-a500-6c51cf464136: #f0f0f0; /* card bg */
+      --token-a3d81e1f-e0a9-4a90-8faf-1201ae348f16: #ff6a004d; /* accent soft */
+      --token-dcda7a06-a063-4e13-bdb5-b6cc4a0e2211: #757575; /* muted */
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --token-f0aa30d0-ed2d-4ee4-8f5a-0a4b541f6ab8: #0d0d0d;
+        --token-3b0f98aa-c16a-4b12-80a4-e1056304b9fa: #fafafa;
+        --token-59e0057d-33bd-4745-b3ad-1acb6546c5ce: #c2c2c2;
+        --token-ec5340ae-6550-4602-9d99-b1711e50337e: #2b2b2b;
+        --token-e102ed96-0129-4d91-a500-6c51cf464136: #121212;
+        --token-dcda7a06-a063-4e13-bdb5-b6cc4a0e2211: gray;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--token-f0aa30d0-ed2d-4ee4-8f5a-0a4b541f6ab8);
+      color: var(--token-3b0f98aa-c16a-4b12-80a4-e1056304b9fa);
+      font-family: "Geist", "Inter", system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 36px 20px 64px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(5px);
+      background: var(--token-490c8163-6119-48f4-a4f6-2848bc2c1f58);
+      border-bottom: 1px solid var(--token-ec5340ae-6550-4602-9d99-b1711e50337e);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      height: 28px;
+      width: 28px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--token-59e0057d-33bd-4745-b3ad-1acb6546c5ce);
+      font-weight: 600;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border: 1px solid var(--token-ec5340ae-6550-4602-9d99-b1711e50337e);
+      border-radius: 999px;
+      font-weight: 600;
+      background: var(--token-e102ed96-0129-4d91-a500-6c51cf464136);
+    }
+
+    .hero {
+      display: grid;
+      gap: 0;
+      margin: 64px 0 32px;
+    }
+
+    .eyebrow {
+      font-weight: 700;
+      color: var(--token-ca491423-ed69-4073-9859-26d521a5ce20);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 44px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .subhead {
+      color: var(--token-59e0057d-33bd-4745-b3ad-1acb6546c5ce);
+      max-width: 720px;
+      font-size: 15px;
+      margin-top: 0.5em;
+      margin-bottom: 1.5em;
+      line-height: 1.4;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+
+    .button.primary {
+      background: var(--token-ca491423-ed69-4073-9859-26d521a5ce20);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(255, 107, 0, 0.24);
+    }
+
+    .button.secondary {
+      border-color: var(--token-ec5340ae-6550-4602-9d99-b1711e50337e);
+      color: var(--token-59e0057d-33bd-4745-b3ad-1acb6546c5ce);
+      background: var(--token-e102ed96-0129-4d91-a500-6c51cf464136);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+      align-items: stretch;
+      grid-auto-rows: minmax(0, 1fr);
+    }
+
+    .card {
+      align-self: stretch;
+      background: var(--token-e102ed96-0129-4d91-a500-6c51cf464136);
+      border: 1px solid var(--token-ec5340ae-6550-4602-9d99-b1711e50337e);
+      border-radius: 6px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow:
+        0px 0.6px 0.6px -1.25px rgba(0, 0, 0, 0.18),
+        0px 2.29px 2.29px -2.5px rgba(0, 0, 0, 0.16),
+        0px 10px 10px -3.75px rgba(0, 0, 0, 0.06);
+      justify-content: flex-start;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .muted {
+      color: var(--token-dcda7a06-a063-4e13-bdb5-b6cc4a0e2211);
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--token-59e0057d-33bd-4745-b3ad-1acb6546c5ce);
+      display: grid;
+      gap: 6px;
+      font-size: 15px;
+    }
+
+    .list-inline {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list-inline li {
+      background: var(--token-e102ed96-0129-4d91-a500-6c51cf464136);
+      border: 1px solid var(--token-ec5340ae-6550-4602-9d99-b1711e50337e);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-weight: 600;
+      color: var(--token-59e0057d-33bd-4745-b3ad-1acb6546c5ce);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--token-ec5340ae-6550-4602-9d99-b1711e50337e);
+      margin: 32px 0 14px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--token-59e0057d-33bd-4745-b3ad-1acb6546c5ce);
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+      padding: 12px 16px;
+    }
+    .page {
+        padding: 24px 16px 48px;
+      }
+      .cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo"><img class="logo-icon" src="icons/craveable-iOS-Default-1024x1024@1x.png" alt="Craveable logo">Craveable</div>
+      <div class="nav-links">
+        <a class="pill" href="mailto:rzbyyy0@gmail.com?subject=Craveable%20support">Email support</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">&thinsp;support page</div>
+      <h1>Food Photography Simplified</h1>
+      <p class="subhead">Use this page to get help, track upcoming releases, and pick up quick tips.</p>
+      <div class="cta-row">
+        <a class="button primary" href="mailto:rzbyyy0@gmail.com?subject=Craveable%20support&body=What%20went%20wrong%3F%0ADevice%3A%0AOS%3A%0AApp%20version%3A%0ASteps%20to%20reproduce%3A">Report an issue</a>
+        <a class="button secondary" href="#updates">Browse upcoming updates</a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="support" class="grid">
+      <article class="card">
+        <h3>Top fixes</h3>
+        <ul>
+          <li>Filters missing: refresh packs, then force-close and reopen.</li>
+          <li>Exports look dull: enable HDR and re-export.</li>
+          <li>Crash on launch: clear cached presets in Settings.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>What to send</h3>
+        <ul>
+          <li>Device + OS version.</li>
+          <li>App version (Settings -> About).</li>
+          <li>Steps to reproduce and a screenshot.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Contact</h3>
+        <ul>
+          <li>Email rzbyyy0@gmail.com or reply in TestFlight if you are on beta.</li>
+          <li>If you want in on the beta, you can also email me!</li>
+          <li>A response should be expected within a day!</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="updates">
+      <div class="card" style="padding: 18px 18px 12px;">
+        <h3>Release tracker</h3>
+        <ul class="list-inline">
+          <li>Below iOS 26 support</li>
+          <li>More LUTs</li>
+          <li>Custom LUT imports</li>
+        </ul>
+        <p class="muted">Want to beta anything here? Email me and mention the feature name.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>Beta support site for Craveable.</span>
+      <span class="muted">Need a tweak? Email rzbyyy0@gmail.com.</span>
+    </footer>
+  </main>
+</body>
+</html>
